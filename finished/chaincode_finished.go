@@ -58,7 +58,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	} else if function == "write" {
 		return t.write(stub, args)
 	}
+	fmt.Println("Issue: " + function)
 	fmt.Println("invoke did not find func: " + function)
+
 
 	return nil, errors.New("Received unknown function invocation: " + function)
 }
